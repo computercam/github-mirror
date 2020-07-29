@@ -1,0 +1,2 @@
+# Copy this to your contab to regularly execute the script everyday at 12 noon
+0 12 * * * username cd /path/to/github/mirror/directory && ./mirror.sh
