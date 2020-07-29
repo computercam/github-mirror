@@ -17,7 +17,7 @@ function get_repos {
 
   local curl_args="-s"
 
-  if [[ $type == "users" ]]
+  if [[ $type == "users" && ! -z "$cred" ]]
   then
     $curl_args="$curl_args -u \"$cred\""
   fi
@@ -46,7 +46,7 @@ CRED=`conf_prop CRED`
 
 if [[ -z "$NAME" || -z "$TYPE" ]]
 then
-   echo "NAME or TYPE is empty, nothing to do."
+   echo "NAME or TYPE is empty, need both to continue."
    echo "Aborting."
    exit 1
 fi
